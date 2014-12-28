@@ -1,4 +1,7 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Persona.Controllers
 {
@@ -31,5 +34,48 @@ namespace Persona.Controllers
     /// <date>28/12/2014T14:13:42+01:00</date>
     public class ResumeController : ApiController
     {
+        /// <summary>
+        ///     Returns profile information.
+        /// </summary>
+        /// <returns>Profile information.</returns>
+        [HttpGet]
+        [Route("resume/profile/"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetProfile()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        ///     Returns education information.
+        /// </summary>
+        /// <returns>Education information.</returns>
+        [HttpGet]
+        [Route("resume/education/"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetEducation()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        ///     Returns experience information.
+        /// </summary>
+        /// <returns>Experience information.</returns>
+        [HttpGet]
+        [Route("resume/experience/"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetExperience()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        ///     Returns skills information.
+        /// </summary>
+        /// <returns>Skills information.</returns>
+        [HttpGet]
+        [Route("resume/skills/"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetSkills()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
