@@ -1,4 +1,7 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Persona.Controllers
 {
@@ -31,5 +34,26 @@ namespace Persona.Controllers
     /// <date>28/12/2014T14:15:42+01:00</date>
     public class WorksController : ApiController
     {
+        /// <summary>
+        ///     Returns all works information.
+        /// </summary>
+        /// <returns>All works information.</returns>
+        [HttpGet]
+        [Route("works/"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetAllWorks()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        ///     Returns work information by its identifier.
+        /// </summary>
+        /// <returns>Work information.</returns>
+        [HttpGet]
+        [Route("works/{workId}"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetWork(int workId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
