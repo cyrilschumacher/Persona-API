@@ -31,7 +31,7 @@ namespace Persona
     ///     SOFTWARE.
     /// </copyright>
     /// <author>Cyril Schumacher</author>
-    /// <date>28/12/2013T13:56:55+01:00</date>
+    /// <date>28/12/2014T13:56:55+01:00</date>
     public class WebApiApplication : HttpApplication
     {
         #region Methods.
@@ -41,7 +41,7 @@ namespace Persona
         /// <summary>
         ///     Initialize security.
         /// </summary>
-        /// <param name="response">Réponse HTTP.</param>
+        /// <param name="response">HTTP response.</param>
         private static void _InitializeSecurity(HttpResponse response)
         {
             // Deletes HTTP headers.
@@ -69,7 +69,6 @@ namespace Persona
         /// </summary>
         protected void Application_PreSendRequestHeaders()
         {
-            // Initialise la sécurité.
             _InitializeSecurity(Response);
         }
 

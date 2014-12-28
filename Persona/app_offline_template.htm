@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Application offline</title>
+    <meta name="robots" content="noindex,nofollow" />
+
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet prefetch" />
+    <link href="//yui.yahooapis.com/3.5.0/build/cssreset/cssreset-min.css" rel="stylesheet prefetch" />
+    <style>
+        html { font-size: 62.5% }
+        html, body { height: 100%; min-height: 100%; width: 100% }
+        body { background: #2980b9; color: #fff; font: 1.4rem 'Source Sans Pro', sans-serif }
+        header { width: 400px }
+        div { display: flex; align-items: center; justify-content: center; height: inherit }
+        h1 { font-size: 6rem; font-weight: 800; line-height: 5rem; text-transform: uppercase }
+        p { font-weight: 300 }
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Down for maintenance</h1>
+            <p>We're currently undergoing scheduled maintenance. We will come back very shortly. Please check back in fifteen minutes. Thank you for your patience.</p>
+        </header>
+    </div>
+
+    <script>
+        window.setTimeout(function () { window.location.href = window.location.href; }, 60000);
+    </script>
+</body>
+</html>

@@ -30,7 +30,7 @@ namespace Persona.Configurations
     ///     SOFTWARE.
     /// </copyright>
     /// <author>Cyril Schumacher</author>
-    /// <date>28/12/2013T13:56:55+01:00</date>
+    /// <date>28/12/2014T13:56:55+01:00</date>
     public static class WebApiConfiguration
     {
         #region Methods.
