@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -42,7 +42,7 @@ namespace Persona.Controllers
         [Route("works/"), ResponseType(typeof(object))]
         public HttpResponseMessage GetAllWorks()
         {
-            throw new NotImplementedException();
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Persona.Controllers
         [Route("works/{workId}"), ResponseType(typeof(object))]
         public HttpResponseMessage GetWork(int workId)
         {
-            throw new NotImplementedException();
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
     }
 }

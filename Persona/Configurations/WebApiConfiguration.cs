@@ -7,7 +7,7 @@ namespace Persona.Configurations
     /// <summary>
     ///     Managing Web APIs.
     /// </summary>
-    /// <copyright file="/WebApiApplication.cs">
+    /// <copyright file="/Configurations/WebApiApplication.cs">
     ///     The MIT License (MIT)
     /// 
     ///     Copyright (c) 2014 Cyril Schumacher.fr

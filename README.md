@@ -1,4 +1,5 @@
 # ![Persona-API](https://raw.githubusercontent.com/cyrilschumacher/Persona/master/icon.png) Persona-API
+[![Build Status](https://ci.appveyor.com/api/projects/status/f5gbcdx3ap3jkj0b?svg=true)](https://ci.appveyor.com/project/cyrilschumacher/persona-api/branch/master) for AppVeyor passing
 
 Persona-API is A REST service that returns different information from my resume. This project is jointly used by the project: [Persona](https://github.com/cyrilschumacher/Persona/).
 

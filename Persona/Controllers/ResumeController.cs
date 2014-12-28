@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -42,7 +42,7 @@ namespace Persona.Controllers
         [Route("resume/profile/"), ResponseType(typeof(object))]
         public HttpResponseMessage GetProfile()
         {
-            throw new NotImplementedException();
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Persona.Controllers
         [Route("resume/education/"), ResponseType(typeof(object))]
         public HttpResponseMessage GetEducation()
         {
-            throw new NotImplementedException();
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Persona.Controllers
         [Route("resume/experience/"), ResponseType(typeof(object))]
         public HttpResponseMessage GetExperience()
         {
-            throw new NotImplementedException();
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Persona.Controllers
         [Route("resume/skills/"), ResponseType(typeof(object))]
         public HttpResponseMessage GetSkills()
         {
-            throw new NotImplementedException();
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
     }
 }
