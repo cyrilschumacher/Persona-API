@@ -1,0 +1,21 @@
+﻿{
+    "Name": "Exia.Cesi",
+    "Period": {
+        "Start": "2011-09-11T00:00:00",
+        "End": "0001-01-01T00:00:00"
+    },
+    "Degrees": [ "Titre certifié niveau III, Analyse-Programmeur" ],
+    "Location": {
+        "Coordinates": {
+            "Latitude": "48.65593",
+            "Longitude": "6.13081",
+            "Altitude": "0"
+        },
+        "Address": {
+            "AddressLine1": "14-16 allée de la Forêt de la Reine",
+            "City": "Vandoeuvre-lès-Nancy",
+            "CountryRegion": "France",
+            "PostalCode": "54500"
+        }
+    }
+}

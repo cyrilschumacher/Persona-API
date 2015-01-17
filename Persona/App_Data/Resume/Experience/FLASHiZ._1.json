@@ -1,0 +1,21 @@
+﻿{
+    "Name": "FLASHiZ",
+    "Period": {
+        "Start": "2013-05-26T00:00:00",
+        "End": "2013-09-05T00:00:00"
+    },
+    "Summary": "Deuxième stage de fin d'année, l'objectif de ce stage est de concevoir une application Windows Phone 7 de paiement mobile en se basant sur un ensemble d'API REST.",
+    "Location": {
+        "Address": {
+            "AddressLine1": "14, rue Aldringen",
+            "City": "Luxembourg-Ville",
+            "CountryRegion": "Luxembourg",
+            "PostalCode": "2014"
+        },
+        "Coordinates": {
+            "Latitude": "49.61026",
+            "Longitude": "6.12671",
+            "Altitude": "0"
+        }
+    }
+}

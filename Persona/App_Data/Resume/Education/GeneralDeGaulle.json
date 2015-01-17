@@ -1,0 +1,21 @@
+﻿{
+    "Name": "Collège Général De Gaulle",
+    "Period": {
+        "Start": "2001-09-03T00:00:00",
+        "End": "2006-06-30T00:00:00"
+    },
+    "Degrees": [ "Brevet des collèges" ],
+    "Location": {
+        "Coordinates": {
+            "Latitude": "49.43835",
+            "Longitude": "6.35683",
+            "Altitude": "0"
+        },
+        "Address": {
+            "AddressLine1": "1, rue Charles de Gaulle",
+            "City": "Sierck-lès-Bains",
+            "CountryRegion": "France",
+            "PostalCode": "57480"
+        }
+    }
+}

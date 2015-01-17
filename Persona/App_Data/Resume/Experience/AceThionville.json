@@ -1,0 +1,21 @@
+﻿{
+    "Name": "ACE Thionville",
+    "Period": {
+        "Start": "2012-11-30T00:00:00",
+        "End": "2012-10-01T00:00:00"
+    },
+    "Summary": "Ce premier stage m'a ramené sur les langages du web. En reprenant les bases du projet web que j'ai travaillé à l'exia.cesi, j'ai amélioré le système de template qui obtient de nouvelles fonctionnalités (l'inclusion de fichier, la prise en charge des commentaires, les boucles simplifiées, les variables, etc.), le modèle MVC qui gagne en dynamisme. Et apprendre de nouvelles techniques : les bases du SEO (pour l'amélioration du référencement). L'optimisation d'un site web (minification, sprites).",
+    "Location": {
+        "Address": {
+            "AddressLine1": "15, rue du Mersch",
+            "City": "Thionville",
+            "CountryRegion": "France",
+            "PostalCode": "57100"
+        },
+        "Coordinates": {
+            "Latitude": "49.35877",
+            "Longitude": "6.16776",
+            "Altitude": "0"
+        }
+    }
+}

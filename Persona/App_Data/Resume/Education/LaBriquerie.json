@@ -1,0 +1,24 @@
+﻿{
+    "Name": "Lycée La Briquerie",
+    "Period": {
+        "Start": "2006-09-04T00:00:00",
+        "End": "2011-06-29T00:00:00"
+    },
+    "Degrees": [
+        "Baccalauréat Professionnel Système électroniques numériques, Spécialité Audiovisuel",
+        "BEP Systèmes électroniques et industriels"
+    ],
+    "Location": {
+        "Coordinates": {
+            "Latitude": "49.43835",
+            "Longitude": "6.35683",
+            "Altitude": "0"
+        },
+        "Address": {
+            "AddressLine1": "15, route de la Briquerie",
+            "City": "Thionville",
+            "CountryRegion": "France",
+            "PostalCode": "57100"
+        }
+    }
+}

@@ -1,16 +1,14 @@
-﻿using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Description;
+﻿using Newtonsoft.Json;
+using System.Net;
 
-namespace Persona.Controllers
+namespace Persona.Model
 {
     /// <summary>
-    ///     Controller for resume information.
+    ///
     /// </summary>
-    /// <copyright file="/Controllers/ResumeController.cs">
+    /// <copyright file="/Model/Response.cs">
     ///     The MIT License (MIT)
-    /// 
+    ///
     ///     Copyright (c) 2014 Cyril Schumacher.fr
     ///     Permission is hereby granted, free of charge, to any person obtaining a copy
     ///     of this software and associated documentation files (the "Software"), to deal
@@ -18,10 +16,10 @@ namespace Persona.Controllers
     ///     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     ///     copies of the Software, and to permit persons to whom the Software is
     ///     furnished to do so, subject to the following conditions:
-    /// 
+    ///
     ///     The above copyright notice and this permission notice shall be included in all
     ///     copies or substantial portions of the Software.
-    /// 
+    ///
     ///     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     ///     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     ///     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -31,51 +29,54 @@ namespace Persona.Controllers
     ///     SOFTWARE.
     /// </copyright>
     /// <author>Cyril Schumacher</author>
-    /// <date>28/12/2014T14:13:42+01:00</date>
-    public class ResumeController : ApiController
+    /// <date>10/01/2014T13:15:10+01:00</date>
+    public class Response<T>
     {
+        #region Fields.
+
         /// <summary>
-        ///     Returns profile information.
+        ///     Gets or sets the status.
         /// </summary>
-        /// <returns>Profile information.</returns>
-        [HttpGet]
-        [Route("resume/profile/"), ResponseType(typeof(object))]
-        public HttpResponseMessage GetProfile()
+        public HttpStatusCode Status { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string Message { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the data.
+        /// </summary>
+        public T Data { get; set; }
+
+        #endregion Fields.
+
+        #region Constructors.
+
+        /// <summary>
+        ///     Constructor.
+        /// </summary>
+        /// <param name="status">HTTP status code.</param>
+        /// <param name="message">Message.</param>
+        /// <param name="data">Data.</param>
+        public Response(HttpStatusCode status, string message, T data = default(T))
         {
-            return new HttpResponseMessage(HttpStatusCode.NoContent);
+            Status = status;
+            Message = message;
+            Data = data;
         }
 
         /// <summary>
-        ///     Returns education information.
+        ///     Constructor.
         /// </summary>
-        /// <returns>Education information.</returns>
-        [HttpGet]
-        [Route("resume/education/"), ResponseType(typeof(object))]
-        public HttpResponseMessage GetEducation()
+        /// <param name="status">HTTP status code.</param>
+        /// <param name="data">Data.</param>
+        public Response(HttpStatusCode status, T data)
+            : this(status, null, data)
         {
-            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
-        /// <summary>
-        ///     Returns experience information.
-        /// </summary>
-        /// <returns>Experience information.</returns>
-        [HttpGet]
-        [Route("resume/experience/"), ResponseType(typeof(object))]
-        public HttpResponseMessage GetExperience()
-        {
-            return new HttpResponseMessage(HttpStatusCode.NoContent);
-        }
-
-        /// <summary>
-        ///     Returns skills information.
-        /// </summary>
-        /// <returns>Skills information.</returns>
-        [HttpGet]
-        [Route("resume/skills/"), ResponseType(typeof(object))]
-        public HttpResponseMessage GetSkills()
-        {
-            return new HttpResponseMessage(HttpStatusCode.NoContent);
-        }
+        #endregion Constructors.
     }
 }

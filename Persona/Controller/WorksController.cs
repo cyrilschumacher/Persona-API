@@ -1,14 +1,14 @@
-﻿using Persona.Configuration;
-using System.Diagnostics.CodeAnalysis;
-using System.Web;
+﻿using System.Net;
+using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
-namespace Persona
+namespace Persona.Controller
 {
     /// <summary>
-    ///     Foundation for Web APIs.
+    ///     Controller for resume information.
     /// </summary>
-    /// <copyright file="/WebApiApplication.cs">
+    /// <copyright file="/Controllers/WorksController.cs">
     ///     The MIT License (MIT)
     ///
     ///     Copyright (c) 2014 Cyril Schumacher.fr
@@ -31,47 +31,29 @@ namespace Persona
     ///     SOFTWARE.
     /// </copyright>
     /// <author>Cyril Schumacher</author>
-    /// <date>28/12/2014T13:56:55+01:00</date>
-    public class WebApiApplication : HttpApplication
+    /// <date>28/12/2014T14:15:42+01:00</date>
+    public class WorksController : ApiController
     {
-        #region Methods.
-
-        #region Private methods.
-
         /// <summary>
-        ///     Initialize security.
+        ///     Returns all works information.
         /// </summary>
-        /// <param name="response">HTTP response.</param>
-        private static void _InitializeSecurity(HttpResponse response)
+        /// <returns>All works information.</returns>
+        [HttpGet]
+        [Route("works/"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetAllWorks()
         {
-            // Deletes HTTP headers.
-            // Indicates the type of server running.
-            response.Headers.Set("Server", string.Empty);
-            // Gets the version of ASP.NET.
-            response.Headers.Remove("X-AspNet-Version");
-            // Gets the version of ASP.NET MVC framework.
-            response.Headers.Remove("X-AspNetMvc-Version");
-        }
-
-        #endregion Private methods.
-
-        /// <summary>
-        ///     Occurs when the application starts.
-        /// </summary>
-        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        protected void Application_Start()
-        {
-            GlobalConfiguration.Configure(WebApiConfiguration.Register);
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         /// <summary>
-        /// Occurs just before ASP.NET sends HTTP headers to the client.
+        ///     Returns work information by its identifier.
         /// </summary>
-        protected void Application_PreSendRequestHeaders()
+        /// <returns>Work information.</returns>
+        [HttpGet]
+        [Route("works/{workId}"), ResponseType(typeof(object))]
+        public HttpResponseMessage GetWork(int workId)
         {
-            _InitializeSecurity(Response);
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
-
-        #endregion Methods.
     }
 }

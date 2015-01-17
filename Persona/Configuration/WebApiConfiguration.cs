@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using System.Web.Routing;
 
-namespace Persona.Configurations
+namespace Persona.Configuration
 {
     /// <summary>
     ///     Managing Web APIs.
     /// </summary>
     /// <copyright file="/Configurations/WebApiApplication.cs">
     ///     The MIT License (MIT)
-    /// 
+    ///
     ///     Copyright (c) 2014 Cyril Schumacher.fr
     ///     Permission is hereby granted, free of charge, to any person obtaining a copy
     ///     of this software and associated documentation files (the "Software"), to deal
@@ -17,10 +18,10 @@ namespace Persona.Configurations
     ///     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     ///     copies of the Software, and to permit persons to whom the Software is
     ///     furnished to do so, subject to the following conditions:
-    /// 
+    ///
     ///     The above copyright notice and this permission notice shall be included in all
     ///     copies or substantial portions of the Software.
-    /// 
+    ///
     ///     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     ///     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     ///     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -49,6 +50,24 @@ namespace Persona.Configurations
             }
         }
 
+        /// <summary>
+        ///     Initialize HTTP itineraries.
+        /// </summary>
+        /// <param name="routes">Collection of instances <see cref="IHttpRoute"/>.</param>
+        private static void _InitializeRoute(HttpRouteCollection routes)
+        {
+            routes.MapHttpRoute("default", "{controller}/{action}/{id}", new { id = RouteParameter.Optional });
+        }
+
+        /// <summary>
+        ///     Initialize Route table.
+        /// </summary>
+        private static void _InitializeRouteTable()
+        {
+            RouteTable.Routes.LowercaseUrls = true;
+            RouteTable.Routes.AppendTrailingSlash = true;
+        }
+
         #endregion Private methods.
 
         /// <summary>
@@ -63,17 +82,11 @@ namespace Persona.Configurations
 
             // Enables the routage.
             configuration.MapHttpAttributeRoutes();
-            // Initialize HTTP itineraries.
-            _InitializeRoute(configuration.Routes);
-        }
 
-        /// <summary>
-        ///     Initialize HTTP itineraries.
-        /// </summary>
-        /// <param name="routes">Collection of instances <see cref="IHttpRoute"/>.</param>
-        private static void _InitializeRoute(HttpRouteCollection routes)
-        {
-            routes.MapHttpRoute("default", "api/{controller}/{id}", new { id = RouteParameter.Optional });
+            // Initialize HTTP itineraries.
+            _InitializeRouteTable();
+            _InitializeRoute(configuration.Routes);
+
         }
 
         #endregion Methods.

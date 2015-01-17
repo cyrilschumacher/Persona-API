@@ -1,0 +1,49 @@
+﻿{
+    "Name": "Langages",
+    "Skill": [
+        {
+            "Name": "Assembleur",
+            "Score": "25"
+        },
+        {
+            "Name": "C",
+            "Score": "50"
+        },
+        {
+            "Name": "C#",
+            "Score": "100"
+        },
+        {
+            "Name": "Java",
+            "Score": "50"
+        },
+        {
+            "Name": "SQL",
+            "Score": "50"
+        },
+        {
+            "Name": "XAML",
+            "Score": "75"
+        },
+        {
+            "Name": "HTML",
+            "Score": "100"
+        },
+        {
+            "Name": "CSS",
+            "Score": "75"
+        },
+        {
+            "Name": "Less",
+            "Score": "75"
+        },
+        {
+            "Name": "JavaScript",
+            "Score": "75"
+        },
+        {
+            "Name": "PHP",
+            "Score": "100"
+        }
+    ]
+}

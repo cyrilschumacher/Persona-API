@@ -1,14 +1,11 @@
-﻿using Persona.Configuration;
-using System.Diagnostics.CodeAnalysis;
-using System.Web;
-using System.Web.Http;
+﻿using System.IO;
 
-namespace Persona
+namespace Persona.Services.FileDatabase
 {
     /// <summary>
-    ///     Foundation for Web APIs.
+    ///
     /// </summary>
-    /// <copyright file="/WebApiApplication.cs">
+    /// <copyright file="/Services/FileDatabase/Database.cs">
     ///     The MIT License (MIT)
     ///
     ///     Copyright (c) 2014 Cyril Schumacher.fr
@@ -31,45 +28,61 @@ namespace Persona
     ///     SOFTWARE.
     /// </copyright>
     /// <author>Cyril Schumacher</author>
-    /// <date>28/12/2014T13:56:55+01:00</date>
-    public class WebApiApplication : HttpApplication
+    /// <date>28/12/2014T14:13:42+01:00</date>
+    public class Database
     {
+        #region Fields.
+
+        /// <summary>
+        ///     Path to database.
+        /// </summary>
+        private readonly string _databasePath;
+
+        #endregion Fields.
+
+        #region Constructor section.
+
+        /// <summary>
+        ///     Constructor.
+        /// </summary>
+        /// <param name="databasePath">Path to database.</param>
+        public Database(string databasePath)
+        {
+            _databasePath = databasePath;
+        }
+
+        #endregion Constructor section.
+
         #region Methods.
 
-        #region Private methods.
-
         /// <summary>
-        ///     Initialize security.
+        ///
         /// </summary>
-        /// <param name="response">HTTP response.</param>
-        private static void _InitializeSecurity(HttpResponse response)
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool Exists(string name)
         {
-            // Deletes HTTP headers.
-            // Indicates the type of server running.
-            response.Headers.Set("Server", string.Empty);
-            // Gets the version of ASP.NET.
-            response.Headers.Remove("X-AspNet-Version");
-            // Gets the version of ASP.NET MVC framework.
-            response.Headers.Remove("X-AspNetMvc-Version");
-        }
-
-        #endregion Private methods.
-
-        /// <summary>
-        ///     Occurs when the application starts.
-        /// </summary>
-        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        protected void Application_Start()
-        {
-            GlobalConfiguration.Configure(WebApiConfiguration.Register);
+            var path = Path.Combine(_databasePath, name);
+            return Directory.Exists(path);
         }
 
         /// <summary>
-        /// Occurs just before ASP.NET sends HTTP headers to the client.
+        ///     Gets the table.
         /// </summary>
-        protected void Application_PreSendRequestHeaders()
+        /// <typeparam name="TIdentifier">The identifier row of the table.</typeparam>
+        /// <typeparam name="TInstance">The entity of the table.</typeparam>
+        /// <returns>The table.</returns>
+        public ICrudFileRepository<TIdentifier, TInstance> Get<TIdentifier, TInstance>(string tableName)
         {
-            _InitializeSecurity(Response);
+            return new JsonFileTable<TIdentifier, TInstance>(_databasePath, tableName);
+        }
+
+        /// <summary>
+        ///     Gets a 32-bit integer that represents the total number of table available.
+        /// </summary>
+        public long Length
+        {
+            get { return Directory.GetDirectories(_databasePath).Length; }
         }
 
         #endregion Methods.
